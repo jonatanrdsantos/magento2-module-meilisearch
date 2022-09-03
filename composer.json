@@ -1,0 +1,26 @@
+{
+    "name": "meilisearch/module-search",
+    "description": "Search that works",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Jonatan Santos",
+            "email": "jonatan.zarowny@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^7.4",
+        "http-interop/http-factory-guzzle": "^1.0",
+        "meilisearch/meilisearch-php": "^0.24.2"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Meilisearch\\Search\\": ""
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="search">
+                <field id="meilisearch_server_hostname" translate="label" type="text" sortOrder="61"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Meilisearch Server Hostname</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_server_port" translate="label" type="text" sortOrder="62" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Meilisearch Server Port</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_index_prefix" translate="label" type="text" sortOrder="63" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Meilisearch Index Prefix</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_current_index" translate="label" type="text" sortOrder="63" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Meilisearch Current Index</label>
+                    <comment>Auto generated meilisearch index by Magento</comment>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_enable_auth" translate="label" type="select" sortOrder="64" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Enable Meilisearch Auth</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_master_key" translate="label" type="obscure" sortOrder="65" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Meilisearch MasterKey</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                        <field id="meilisearch_enable_auth">1</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_server_timeout" translate="label" type="text" sortOrder="67" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Meilisearch Server Timeout</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_test_connect_wizard" translate="button_label" sortOrder="68" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label/>
+                    <button_label>Test Connection</button_label>
+                    <frontend_model>Meilisearch\Search\Block\Adminhtml\System\Config\TestConnection</frontend_model>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
