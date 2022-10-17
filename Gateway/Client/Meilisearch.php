@@ -10,10 +10,13 @@ declare(strict_types=1);
 namespace Meilisearch\Search\Gateway\Client;
 
 use Magento\AdvancedSearch\Model\Client\ClientInterface;
+use Meilisearch\Search\Api\Data\Client\IndexCollectionInterface;
+use Meilisearch\Search\Api\Data\Client\IndexInterface;
+use Meilisearch\Search\Api\Data\ClientInterface as MeilisearchClientInterface;
 use MeiliSearch\Client;
 use MeiliSearch\ClientFactory;
 
-class Meilisearch implements ClientInterface
+class Meilisearch implements ClientInterface, MeilisearchClientInterface
 {
     /**
      * @var array
@@ -66,5 +69,52 @@ class Meilisearch implements ClientInterface
             ]);
         }
         return $this->pool[$pid];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getAllIndexes(): IndexCollectionInterface
+    {
+        $indexes = $this->getClient()->getAllIndexes();
+        // TODO: Implement getAllIndexes() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getIndex(string $uid): IndexInterface
+    {
+        $index = $this->getClient()->getIndex($uid);
+        // TODO: Implement getIndex() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function createIndex(string $uid, string $primaryKey = null): IndexInterface
+    {
+        $options = [];
+        if (null == $primaryKey) {
+            $options = ['primary_key' => $primaryKey];
+        }
+        $index = $this->getClient()->createIndex($uid, $options);
+        // TODO: Implement createIndex() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function updateIndex(string $uid, string $primaryKey): IndexInterface
+    {
+        // TODO: Implement updateIndex() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function deleteIndex(string $uid): void
+    {
+        // TODO: Implement deleteIndex() method.
     }
 }
