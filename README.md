@@ -1,4 +1,25 @@
-# Mage2 Module Meilisearch Search
+<p align="center">
+  <img src="https://raw.githubusercontent.com/meilisearch/integration-guides/main/assets/logos/meilisearch_magento.svg" alt="Meilisearch-Magento" width="200" height="200" />
+</p>
+
+<h1 align="center">Magento2 module Meiliserch</h1>
+
+<h4 align="center">
+  <a href="https://github.com/meilisearch/meilisearch">Meilisearch</a> |
+  <a href="https://docs.meilisearch.com">Documentation</a> |
+  <a href="https://discord.meilisearch.com">Discord</a> |
+  <a href="https://roadmap.meilisearch.com/tabs/1-under-consideration">Roadmap</a> |
+  <a href="https://www.meilisearch.com">Website</a> |
+  <a href="https://docs.meilisearch.com/faq">FAQ</a>
+</h4>
+
+<p align="center">
+ <!-- <a href="https://packagist.org/packages/meilisearch/meilisearch-magento"><img src="https://img.shields.io/packagist/v/meilisearch/meilisearch-magento" alt="Latest Stable Version"></a>
+  <a href="https://github.com/meilisearch/meilisearch-magento/actions"><img src="https://github.com/meilisearch/meilisearch-magento/workflows/Tests/badge.svg" alt="Test"></a>
+  <a href="https://github.com/meilisearch/meilisearch-magento/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-informational" alt="License"></a> -->
+</p>
+
+**Meilisearch** is an open-source search engine. [Learn more about Meilisearch.](https://github.com/meilisearch/Meilisearch)
 
     ``meilisearch/module-search``
 
