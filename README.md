@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/meilisearch/integration-guides/main/assets/logos/meilisearch_magento.svg" alt="Meilisearch-Magento" width="200" height="200" />
 </p>
 
-<h1 align="center">Magento2 module Meiliserch</h1>
+<h1 align="center">🚧 [WIP] Magento2 module Meiliserch</h1>
 
 <h4 align="center">
   <a href="https://github.com/meilisearch/meilisearch">Meilisearch</a> |
