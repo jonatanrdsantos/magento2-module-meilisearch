@@ -21,7 +21,16 @@
 
 **Meilisearch** is an open-source search engine. [Learn more about Meilisearch.](https://github.com/meilisearch/Meilisearch)
 
-    ``meilisearch/module-search``
+[![Latest Stable Version](http://poser.pugx.org/jonatanrdsantos/magento2-module-meilisearch/v)](https://packagist.org/packages/jonatanrdsantos/magento2-module-meilisearch)
+[![Latest Unstable Version](http://poser.pugx.org/jonatanrdsantos/magento2-module-meilisearch/v/unstable)](https://packagist.org/packages/jonatanrdsantos/magento2-module-meilisearch)
+[![License](http://poser.pugx.org/jonatanrdsantos/magento2-module-meilisearch/license)](https://packagist.org/packages/jonatanrdsantos/magento2-module-meilisearch)
+[![codecov](https://codecov.io/github/jonatanrdsantos/magento2-module-meilisearch/branch/main/graph/badge.svg?token=LR083LNHU5)](https://codecov.io/github/jonatanrdsantos/magento2-module-meilisearch)
+![Maintenance](https://img.shields.io/maintenance/yes/2023)
+![Packagist PHP Version](https://img.shields.io/packagist/dependency-v/jonatanrdsantos/magento2-module-meilisearch/php)
+![Packagist PHP Version](https://img.shields.io/badge/magento-%202.5-brightgreen.svg?logo=magento&longCache=true)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/jonatanrdsantos/magento2-module-meilisearch/code_quality.yml)
+
+    jonatanrdsantos/magento2-module-meilisearch
 
  - [Main Functionalities](#markdown-header-main-functionalities)
  - [Installation](#markdown-header-installation)
@@ -38,19 +47,15 @@ Search that works
 
 ### Type 1: Zip file
 
- - Unzip the zip file in `app/code/Meilisearch`
+ - Unzip the zip file in `app/code/Meilisearch/Search`
  - Enable the module by running `php bin/magento module:enable Meilisearch_Search`
  - Apply database updates by running `php bin/magento setup:upgrade`\*
  - Flush the cache by running `php bin/magento cache:flush`
 
 ### Type 2: Composer
 
- - Make the module available in a composer repository for example:
-    - private repository `repo.magento.com`
-    - public repository `packagist.org`
-    - public github repository as vcs
  - Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
- - Install the module composer by running `composer require meilisearch/module-search`
+ - Install the module composer by running `composer require jonatanrdsantos/magento2-module-meilisearch`
  - enable the module by running `php bin/magento module:enable Meilisearch_Search`
  - apply database updates by running `php bin/magento setup:upgrade`\*
  - Flush the cache by running `php bin/magento cache:flush`
