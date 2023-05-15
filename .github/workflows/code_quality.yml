@@ -28,6 +28,9 @@ jobs:
           composer global require magento/magento-coding-standard:${{ env.MAGENTO_CODING_STANDARD }} && \
           phpcs --config-set installed_paths "$vendor_path/magento/magento-coding-standard/,$vendor_path/phpcompatibility/php-compatibility/"
 
+      - name: Install meilisearch PHP SDK
+        run: composer require meilisearch/meilisearch-php:1.1
+
       - name: Run phpcs
         run: phpcs -n -q --report=checkstyle --standard=Magento2 . | cs2pr
 
