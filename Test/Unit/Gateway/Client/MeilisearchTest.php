@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Meilisearch\Search\Test\Unit\Gateway\Client;
 
-use MeiliSearch\Client;
-use MeiliSearch\ClientFactory;
+use Meilisearch\Client;
+use Meilisearch\ClientFactory;
 use Meilisearch\Search\Gateway\Client\Meilisearch;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -22,9 +22,9 @@ class MeilisearchTest extends TestCase
     private MockObject $client;
 
     /**
-     * @var MockObject
+     * @var MockObject|ClientFactory
      */
-    private MockObject $clientFactory;
+    private MockObject|ClientFactory $clientFactory;
 
     /**
      * @var Meilisearch
@@ -32,7 +32,7 @@ class MeilisearchTest extends TestCase
     private Meilisearch $meilisearch;
 
     /**
-     * @var array
+     * @var array<string, string>
      */
     private array $options = [
         'hostname' => 'localhost',

@@ -18,6 +18,9 @@ class Engine implements EngineInterface
      */
     private Visibility $catalogProductVisibility;
 
+    /**
+     * @param Visibility $catalogProductVisibility
+     */
     public function __construct(
         Visibility $catalogProductVisibility
     ) {
@@ -26,6 +29,7 @@ class Engine implements EngineInterface
 
     /**
      * @inheritDoc
+     * @phpstan-ignore-next-line
      */
     public function getAllowedVisibility(): array
     {
@@ -50,13 +54,20 @@ class Engine implements EngineInterface
 
     /**
      * @inheritDoc
+     * @phpstan-ignore-next-line
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function prepareEntityIndex($index, $separator = ' '): array
     {
         return $index;
     }
 
-    public function isAvailable()
+    /**
+     * Engine status
+     *
+     * @return bool
+     */
+    public function isAvailable(): bool
     {
         return true;
     }

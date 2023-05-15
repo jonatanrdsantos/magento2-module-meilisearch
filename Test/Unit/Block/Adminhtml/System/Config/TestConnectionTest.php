@@ -10,11 +10,15 @@ namespace Meilisearch\Search\Test\Unit\Block\Adminhtml\System\Config;
 
 use Magento\Backend\Block\Template\Context;
 use Meilisearch\Search\Block\Adminhtml\System\Config\TestConnection;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
 class TestConnectionTest extends TestCase
 {
+    /**
+     * @var array|string[]
+     */
     private array $fields = [
         'engine' => 'catalog_search_engine',
         'hostname' => 'catalog_search_meilisearch_server_hostname',
@@ -24,6 +28,11 @@ class TestConnectionTest extends TestCase
         'master_key' => 'meilisearch_master_key',
         'timeout' => 'catalog_search_meilisearch_server_timeout',
     ];
+
+    /**
+     * @var Context|MockObject
+     */
+    private Context|MockObject $context;
 
     /**
      * Set up test environment.

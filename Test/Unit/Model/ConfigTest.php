@@ -27,7 +27,7 @@ class ConfigTest extends TestCase
     private Config $config;
 
     /**
-     * @var array
+     * @var array<string, string>
      */
     private array $options = [
         'key' => '65742d24d14fc23431bfc1c3f29e24da5e695ff21cdcf877f1a4b271d80de02f',

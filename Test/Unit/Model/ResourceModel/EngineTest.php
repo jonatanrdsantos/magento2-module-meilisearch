@@ -8,10 +8,11 @@ declare(strict_types=1);
 
 namespace Meilisearch\Search\Test\Unit\Model\ResourceModel;
 
+use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\MockObject\MockObject;
+use Magento\Eav\Model\Entity\Attribute;
 use Magento\Catalog\Model\Product\Visibility;
 use Meilisearch\Search\Model\ResourceModel\Engine;
-use PHPUnit\Framework\TestCase;
 
 class EngineTest extends TestCase
 {
@@ -19,6 +20,11 @@ class EngineTest extends TestCase
      * @var MockObject
      */
     private MockObject $visibility;
+
+    /**
+     * @var MockObject|Attribute
+     */
+    private MockObject|Attribute $attribute;
 
     /**
      * @var Engine
@@ -33,6 +39,9 @@ class EngineTest extends TestCase
     protected function setUp(): void
     {
         $this->visibility = $this->getMockBuilder(Visibility::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $this->attribute = $this->getMockBuilder(Attribute::class)
             ->disableOriginalConstructor()
             ->getMock();
         $this->engine = new Engine($this->visibility);
@@ -79,7 +88,7 @@ class EngineTest extends TestCase
      */
     public function testProcessAttributeValue(): void
     {
-        $this->assertEquals(1, $this->engine->processAttributeValue('attribute', 1));
+        $this->assertEquals(1, $this->engine->processAttributeValue($this->attribute, 1));
     }
 
     /**

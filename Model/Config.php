@@ -28,6 +28,9 @@ class Config implements ConfigInterface, ClientOptionsInterface
      */
     private ScopeConfigInterface $scopeConfig;
 
+    /**
+     * @param ScopeConfigInterface $scopeConfig
+     */
     public function __construct(
         ScopeConfigInterface $scopeConfig
     ) {
@@ -35,7 +38,16 @@ class Config implements ConfigInterface, ClientOptionsInterface
     }
 
     /**
-     * @inheritDoc
+     * Return search client options
+     *
+     * @param array $options
+     *
+     * @phpstan-param array<string, string>  $options
+     * @phpstan-ignore-next-line
+     *
+     * @return array
+     *
+     * @since 100.1.0
      */
     public function prepareClientOptions($options = []): array
     {
@@ -109,10 +121,10 @@ class Config implements ConfigInterface, ClientOptionsInterface
      */
     public function isEnableAuth(): bool
     {
-        return $this->scopeConfig->isSetFlag(
+        return (bool)$this->scopeConfig->isSetFlag(
             self::CATALOG_SEARCH_MEILISEARCH_ENABLE_AUTH,
             ScopeInterface::SCOPE_STORE
-        ) ?? false;
+        );
     }
 
     /**

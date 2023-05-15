@@ -33,6 +33,11 @@ class Meilisearch implements ClientInterface, MeilisearchClientInterface
      */
     private ClientFactory $clientFactory;
 
+    /**
+     * @param ClientFactory $clientFactory
+     * @param $options
+     * @param $meilisearchClient
+     */
     public function __construct(
         ClientFactory $clientFactory,
         $options = [],
@@ -76,7 +81,7 @@ class Meilisearch implements ClientInterface, MeilisearchClientInterface
      */
     public function getAllIndexes(): IndexCollectionInterface
     {
-        $indexes = $this->getClient()->getAllIndexes();
+        //$indexes = $this->getClient()->getIndexes();
         // TODO: Implement getAllIndexes() method.
     }
 
@@ -85,7 +90,7 @@ class Meilisearch implements ClientInterface, MeilisearchClientInterface
      */
     public function getIndex(string $uid): IndexInterface
     {
-        $index = $this->getClient()->getIndex($uid);
+        //$index = $this->getClient()->getIndex($uid);
         // TODO: Implement getIndex() method.
     }
 
@@ -98,7 +103,7 @@ class Meilisearch implements ClientInterface, MeilisearchClientInterface
         if (null == $primaryKey) {
             $options = ['primary_key' => $primaryKey];
         }
-        $index = $this->getClient()->createIndex($uid, $options);
+        $this->getClient()->createIndex($uid, $options);
         // TODO: Implement createIndex() method.
     }
 
